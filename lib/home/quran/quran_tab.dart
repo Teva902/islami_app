@@ -226,7 +226,7 @@ class QuranTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset('assets/images/quran_logo.png'),
+        Expanded(child: Image.asset('assets/images/quran_logo.png')),
         Divider(
           color: AppColors.primaryLightColor,
           thickness: 3,
@@ -250,46 +250,47 @@ class QuranTab extends StatelessWidget {
           thickness: 3,
         ),
         Expanded(
+            flex: 2,
             child: Row(
-          children: [
-            Expanded(
-              child: ListView.separated(
-                  itemBuilder: (context, index) {
-                    return ItemSuraName(
-                      name: names[index],
-                      index: index,
-                    );
-                  },
-                  separatorBuilder: (context, index) {
-                    return Divider(
-                      color: AppColors.primaryLightColor,
-                      thickness: 1,
-                    );
-                  },
-                  itemCount: names.length),
-            ),
-            VerticalDivider(
-              color: AppColors.primaryLightColor,
-              thickness: 3,
-            ),
-            Expanded(
-              child: ListView.separated(
-                  itemBuilder: (context, index) {
-                    return ItemSuraName(
-                      name: Ayat[index],
-                      index: index,
-                    );
-                  },
-                  separatorBuilder: (context, index) {
-                    return Divider(
-                      color: AppColors.primaryLightColor,
-                      thickness: 1,
-                    );
-                  },
-                  itemCount: Ayat.length),
-            )
-          ],
-        )),
+              children: [
+                Expanded(
+                  child: ListView.separated(
+                      itemBuilder: (context, index) {
+                        return ItemSuraName(
+                          name: names[index],
+                          index: index,
+                        );
+                      },
+                      separatorBuilder: (context, index) {
+                        return Divider(
+                          color: AppColors.primaryLightColor,
+                          thickness: 1,
+                        );
+                      },
+                      itemCount: names.length),
+                ),
+                VerticalDivider(
+                  color: AppColors.primaryLightColor,
+                  thickness: 3,
+                ),
+                Expanded(
+                  child: ListView.separated(
+                      itemBuilder: (context, index) {
+                        return ItemSuraName(
+                          name: Ayat[index],
+                          index: index,
+                        );
+                      },
+                      separatorBuilder: (context, index) {
+                        return Divider(
+                          color: AppColors.primaryLightColor,
+                          thickness: 1,
+                        );
+                      },
+                      itemCount: Ayat.length),
+                )
+              ],
+            )),
       ],
     );
   }
