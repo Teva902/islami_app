@@ -22,20 +22,31 @@ class _SebhaTabState extends State<SebhaTab> {
         Expanded(
           child: Column(
             children: [
-              Image.asset(
-                'assets/images/sebha_head.png',
-              ),
-              InkWell(
-                  onTap: () {
-                    clickCount++;
-                    TextWillShow();
-                    TextTitle();
-                    rotationAngle += 90;
-                    setState(() {});
-                  },
-                  child: Transform.rotate(
-                      angle: rotationAngle * (3.1415927 / 180),
-                      child: Image.asset('assets/images/sebha_body.png'))),
+              Stack(
+                children: [
+                  Positioned(
+                    right: 66,
+                    child: Image.asset(
+                      'assets/images/sebha_head.png',
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 70),
+                    child: InkWell(
+                        onTap: () {
+                          clickCount++;
+                          TextWillShow();
+                          TextTitle();
+                          rotationAngle += 90;
+                          setState(() {});
+                        },
+                        child: Transform.rotate(
+                            angle: rotationAngle * (3.1415927 / 180),
+                            child:
+                                Image.asset('assets/images/sebha_body.png'))),
+                  ),
+                ],
+              )
             ],
           ),
         ),

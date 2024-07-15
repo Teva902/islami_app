@@ -33,10 +33,10 @@ class HadethTab extends StatelessWidget {
                   ),
                 )
               : ListView.separated(
-                  itemBuilder: (context, index) {
+                  itemBuilder: (_, index) {
                     return ItemHadethName(hadeth: ahadethList[index]);
                   },
-                  separatorBuilder: (context, index) {
+              separatorBuilder: (_, index) {
                     return Divider(
                       color: AppColors.primaryLightColor,
                       thickness: 1,
