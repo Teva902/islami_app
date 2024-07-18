@@ -10,8 +10,13 @@ class SebhaTab extends StatefulWidget {
 
 class _SebhaTabState extends State<SebhaTab> {
   int clickCount = 0;
-
-  int prayer = 0;
+  int index = 0;
+  List<String> azker = [
+    'الحمد لله',
+    "استغفر الله",
+    'سبحان الله',
+    'الله اكبر',
+  ];
 
   double rotationAngle = 0.0;
   String textShow = 'سبحان الله';
@@ -43,8 +48,9 @@ class _SebhaTabState extends State<SebhaTab> {
                     child: InkWell(
                         onTap: () {
                           clickCount++;
-                          TextWillShow();
-                          TextTitle();
+                          AzkerShow();
+                          // TextWillShow();
+                          // TextTitle();
                           rotationAngle += 90;
                           setState(() {});
                         },
@@ -92,7 +98,7 @@ class _SebhaTabState extends State<SebhaTab> {
                     borderRadius: BorderRadius.circular(15)),
                 child: Center(
                     child: Text(
-                  textShow,
+                      "${azker[index]}",
                   textAlign: TextAlign.center,
                   style: TextStyle(color: AppColors.whiteColor),
                 )),
@@ -104,25 +110,36 @@ class _SebhaTabState extends State<SebhaTab> {
     );
   }
 
-  void TextWillShow() {
-    if (clickCount == 31) {
+  void AzkerShow() {
+    if (clickCount == 33) {
+      index++;
       clickCount = 0;
-      prayer++;
+      if (index == azker.length) {
+        index = 0;
+        clickCount++;
+      }
     }
   }
 
-  void TextTitle() {
-    if (prayer == 1) {
-      textShow = 'الحمد لله';
-    } else if (prayer == 2) {
-      textShow = 'استغفر الله';
-    } else if (prayer == 3) {
-      textShow = 'الله اكبر';
-    } else if (prayer == 4) {
-      textShow = 'الملك لله';
-    } else if (prayer >= 5) {
-      prayer = 0;
-      textShow = 'سبحان الله';
-    }
-  }
+// void TextWillShow() {
+//   if (clickCount == 31) {
+//     clickCount = 0;
+//     prayer++;
+//   }
+// }
+//
+// void TextTitle() {
+//   if (prayer == 1) {
+//     textShow = 'الحمد لله';
+//   } else if (prayer == 2) {
+//     textShow = 'استغفر الله';
+//   } else if (prayer == 3) {
+//     textShow = 'الله اكبر';
+//   } else if (prayer == 4) {
+//     textShow = 'الملك لله';
+//   } else if (prayer >= 5) {
+//     prayer = 0;
+//     textShow = 'سبحان الله';
+//   }
+// }
 }
