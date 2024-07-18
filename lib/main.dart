@@ -19,16 +19,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     var provider = Provider.of<AppConfigProvider>(context);
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        initialRoute: HomeScreen.routeName,
-        routes: {
-          HomeScreen.routeName: (context) => HomeScreen(),
-          SuraDetailsScreen.routeName: (context) => SuraDetailsScreen(),
-          HadethDetailsScreen.routeName: (context) => HadethDetailsScreen(),
-        },
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
-        locale: Locale(provider.appLanguage),
-        theme: MyThemeData.lightMode);
+      debugShowCheckedModeBanner: false,
+      initialRoute: HomeScreen.routeName,
+      routes: {
+        HomeScreen.routeName: (context) => HomeScreen(),
+        SuraDetailsScreen.routeName: (context) => SuraDetailsScreen(),
+        HadethDetailsScreen.routeName: (context) => HadethDetailsScreen(),
+      },
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: Locale(provider.appLanguage),
+      theme: MyThemeData.lightMode,
+      themeMode: provider.appTheme,
+      darkTheme: MyThemeData.darkMode,
+    );
   }
 }

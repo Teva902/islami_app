@@ -3,18 +3,23 @@ import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/app_colors.dart';
 import 'package:islami_app/home/hadeth/item_hadeth_name.dart';
+import 'package:islami_app/providers/app_config_provider.dart';
+import 'package:provider/provider.dart';
 
 class HadethTab extends StatelessWidget {
   List<Hadeth> ahadethList = [];
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     loadHadethFile();
     return Column(
       children: [
         Expanded(child: Image.asset('assets/images/hadeth_logo.png')),
         Divider(
-          color: AppColors.primaryLightColor,
+          color: provider.isDarkMode()
+              ? AppColors.yellowColor
+              : AppColors.primaryLightColor,
           thickness: 3,
         ),
         Text(
@@ -22,28 +27,32 @@ class HadethTab extends StatelessWidget {
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         Divider(
-          color: AppColors.primaryLightColor,
+          color: provider.isDarkMode()
+              ? AppColors.yellowColor
+              : AppColors.primaryLightColor,
           thickness: 3,
         ),
         Expanded(
           flex: 2,
           child: ahadethList.isEmpty
               ? Center(
-                  child: CircularProgressIndicator(
-                    color: AppColors.primaryLightColor,
-                  ),
-                )
+            child: CircularProgressIndicator(
+              color: AppColors.primaryLightColor,
+            ),
+          )
               : ListView.separated(
-                  itemBuilder: (_, index) {
-                    return ItemHadethName(hadeth: ahadethList[index]);
-                  },
+              itemBuilder: (_, index) {
+                return ItemHadethName(hadeth: ahadethList[index]);
+              },
               separatorBuilder: (_, index) {
-                    return Divider(
-                      color: AppColors.primaryLightColor,
+                return Divider(
+                      color: provider.isDarkMode()
+                          ? AppColors.yellowColor
+                          : AppColors.primaryLightColor,
                       thickness: 1,
                     );
-                  },
-                  itemCount: ahadethList.length),
+              },
+              itemCount: ahadethList.length),
         ),
       ],
     );

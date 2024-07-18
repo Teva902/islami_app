@@ -10,6 +10,9 @@
 "settings":"Settings",
 "language":"Language",
 "arabic":"Arabic",
+"theme":"Theme",
+"light":"Light",
+"dark":"Dark",
 "english":"English"
 
 }

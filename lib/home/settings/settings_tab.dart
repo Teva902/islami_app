@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/home/settings/language_buttom_sheet.dart';
+import 'package:islami_app/home/settings/theme_buttom_sheet.dart';
 import 'package:islami_app/providers/app_config_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -34,8 +35,11 @@ class _SettingsTabState extends State<SettingsTab> {
             child: Container(
               padding: EdgeInsets.all(12),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: AppColors.primaryLightColor),
+                borderRadius: BorderRadius.circular(15),
+                color: provider.isDarkMode()
+                    ? AppColors.yellowColor
+                    : AppColors.primaryLightColor,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -52,7 +56,46 @@ class _SettingsTabState extends State<SettingsTab> {
                 ],
               ),
             ),
-          )
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            AppLocalizations.of(context)!.theme,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          InkWell(
+            onTap: () {
+              showThemeButtonSheet();
+            },
+            child: Container(
+              padding: EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: provider.isDarkMode()
+                    ? AppColors.yellowColor
+                    : AppColors.primaryLightColor,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    provider.isDarkMode()
+                        ? AppLocalizations.of(context)!.dark
+                        : AppLocalizations.of(context)!.light,
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                  Icon(
+                    Icons.arrow_drop_down,
+                    size: 35,
+                  )
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -61,5 +104,10 @@ class _SettingsTabState extends State<SettingsTab> {
   void showLanguageButtonSheet() {
     showModalBottomSheet(
         context: context, builder: (cotext) => LanguageButtomSheet());
+  }
+
+  void showThemeButtonSheet() {
+    showModalBottomSheet(
+        context: context, builder: (context) => ThemeButtomSheet());
   }
 }
