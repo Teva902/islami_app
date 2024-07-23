@@ -47,16 +47,16 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
           ),
         ),
         body: verses.isEmpty
-            ? Center(
-          child: CircularProgressIndicator(
-            color: AppColors.primaryLightColor,
-          ),
-        )
+            ? const Center(
+                child: CircularProgressIndicator(
+                  color: AppColors.primaryLightColor,
+                ),
+              )
             : Container(
-          margin: EdgeInsets.symmetric(
-              horizontal: MediaQuery.of(context).size.width * 0.05,
-              vertical: MediaQuery.of(context).size.height * 0.04),
-          decoration: BoxDecoration(
+                margin: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width * 0.05,
+                    vertical: MediaQuery.of(context).size.height * 0.04),
+                decoration: BoxDecoration(
                     color: provider.isDarkMode()
                         ? AppColors.primaryDarkColor
                         : AppColors.whiteColor,

@@ -5,9 +5,9 @@ class MyThemeData {
   static final ThemeData lightMode = ThemeData(
       primaryColor: AppColors.primaryLightColor,
       scaffoldBackgroundColor: Colors.transparent,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent, elevation: 0, centerTitle: true),
-      textTheme: TextTheme(
+      textTheme: const TextTheme(
         bodyLarge: TextStyle(
           fontSize: 30,
           fontWeight: FontWeight.bold,
@@ -17,19 +17,19 @@ class MyThemeData {
         bodySmall: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         titleLarge: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
       ),
-      bottomNavigationBarTheme:
-          BottomNavigationBarThemeData(selectedItemColor: AppColors.blackColor),
-      iconTheme: IconThemeData(color: AppColors.blackColor));
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          selectedItemColor: AppColors.blackColor),
+      iconTheme: const IconThemeData(color: AppColors.blackColor));
 
   static final ThemeData darkMode = ThemeData(
       primaryColor: AppColors.primaryDarkColor,
       scaffoldBackgroundColor: Colors.transparent,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
           foregroundColor: AppColors.whiteColor,
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true),
-      textTheme: TextTheme(
+      textTheme: const TextTheme(
         bodyLarge: TextStyle(
           fontSize: 30,
           fontWeight: FontWeight.bold,
@@ -48,8 +48,8 @@ class MyThemeData {
             fontWeight: FontWeight.w400,
             color: AppColors.whiteColor),
       ),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           selectedItemColor: AppColors.yellowColor,
           unselectedItemColor: AppColors.whiteColor),
-      iconTheme: IconThemeData(color: AppColors.whiteColor));
+      iconTheme: const IconThemeData(color: AppColors.whiteColor));
 }

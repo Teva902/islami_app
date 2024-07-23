@@ -35,17 +35,17 @@ class HadethTab extends StatelessWidget {
         Expanded(
           flex: 2,
           child: ahadethList.isEmpty
-              ? Center(
-            child: CircularProgressIndicator(
-              color: AppColors.primaryLightColor,
-            ),
-          )
+              ? const Center(
+                  child: CircularProgressIndicator(
+                    color: AppColors.primaryLightColor,
+                  ),
+                )
               : ListView.separated(
-              itemBuilder: (_, index) {
-                return ItemHadethName(hadeth: ahadethList[index]);
-              },
-              separatorBuilder: (_, index) {
-                return Divider(
+                  itemBuilder: (_, index) {
+                    return ItemHadethName(hadeth: ahadethList[index]);
+                  },
+                  separatorBuilder: (_, index) {
+                    return Divider(
                       color: provider.isDarkMode()
                           ? AppColors.yellowColor
                           : AppColors.primaryLightColor,
