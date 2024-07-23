@@ -70,7 +70,7 @@ class _SebhaTabState extends State<SebhaTab> {
         Expanded(
           child: Column(
             children: [
-              Text('عدد التسبيحات'),
+              const Text('عدد التسبيحات'),
               Container(
                 margin: EdgeInsets.only(
                     top: MediaQuery.of(context).size.height * 0.04),
