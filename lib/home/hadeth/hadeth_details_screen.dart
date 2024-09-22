@@ -34,7 +34,7 @@ class HadethDetailsScreen extends StatelessWidget {
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                 color: provider.isDarkMode()
                     ? AppColors.yellowColor
-                    : AppColors.whiteColor),
+                    : AppColors.blackColor),
           ),
         ),
         body: Container(

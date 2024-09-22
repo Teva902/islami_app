@@ -34,3 +34,15 @@ To run the application locally, follow these steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/islami_app.git
+
+## Screenshots
+
+### Light Mode
+
+![Home Screen Ligt](assets/screenshots/home_screen_light.png)
+![Hadeth Screen Ligt](assets/screenshots/hadeth_tab_light.png)
+![Sebha Screen Ligt](assets/screenshots/sebha_tab_light.png)
+![Radio Screen Ligt](assets/screenshots/radio_tab_light.png)
+![Settings Screen Ligt](assets/screenshots/seetings_tab_light.png)
+![Quran Details Screen Ligt](assets/screenshots/quran_details_light.png)
+![Hadeth Details Screen Ligt](assets/screenshots/hadeth_details_light.png)

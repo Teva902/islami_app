@@ -43,7 +43,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                 color: provider.isDarkMode()
                     ? AppColors.yellowColor
-                    : AppColors.whiteColor),
+                    : AppColors.blackColor),
           ),
         ),
         body: verses.isEmpty
