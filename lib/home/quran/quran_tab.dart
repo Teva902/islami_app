@@ -296,14 +296,11 @@ class QuranTab extends StatelessWidget {
                                 index: index,
                               ),
                             ),
-                            SizedBox(
-                              width: 20,
-                              child: VerticalDivider(
-                                color: provider.isDarkMode()
-                                    ? AppColors.yellowColor
-                                    : AppColors.primaryLightColor,
-                                thickness: 3,
-                              ),
+                            VerticalDivider(
+                              color: provider.isDarkMode()
+                                  ? AppColors.yellowColor
+                                  : AppColors.primaryLightColor,
+                              thickness: 3,
                             ),
                             Expanded(
                               child: ItemSuraName(
