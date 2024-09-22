@@ -46,3 +46,13 @@ To run the application locally, follow these steps:
 ![Settings Screen Ligt](assets/screenshots/seetings_tab_light.png)
 ![Quran Details Screen Ligt](assets/screenshots/quran_details_light.png)
 ![Hadeth Details Screen Ligt](assets/screenshots/hadeth_details_light.png)
+
+### Dark Mode
+
+![Home Screen Dark](assets/screenshots/home_screen_dark.png)
+![Hadeth Screen Dark](assets/screenshots/hadeth_screen_dark.png)
+![Sebha Screen Dark](assets/screenshots/sebha_screen_dark.png)
+![Radio Screen Dark](assets/screenshots/radio_tab_dark.png)
+![Settings Screen Dark](assets/screenshots/settings_tab_dark.png)
+![Quran Details Screen Dark](assets/screenshots/quran_details_dark.png)
+![Hadeth Details Screen Dark](assets/screenshots/hadeth_details_dark.png)
